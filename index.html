@@ -1,0 +1,51 @@
+<html>
+  <head>
+    <title>Demo - 2ico</title>
+    <style>
+      #canvas {
+        width: 128px;
+        height: 128px;
+        border: 1px solid black;
+      }
+      code {
+      }
+    </style>
+    <script src="./demo-assets/file-saver.js"></script>
+    <script src="./build/index.umd.js"></script>
+  </head>
+  <body>
+    <canvas id="canvas" width="128" height="128"> </canvas>
+    <button id="download">Download</button>
+    <div>
+      <code>
+        const $canvas = document.getElementById("canvas"); <br />
+        toIco($canvas);
+      </code>
+    </div>
+
+    <script>
+      const $canvas = document.getElementById("canvas");
+      const ctx = $canvas.getContext("2d");
+      const image = new Image();
+      image.crossOrigin = "Anonymous";
+      image.onload = async () => {
+        const { width, height } = $canvas;
+        ctx.drawImage(image, 0, 0, width, height);
+        const $downloadBtn = document.getElementById("download");
+        const ico = toIco($canvas);
+        console.log(ico);
+        const data = await fetch(ico);
+        const blob = await data.blob();
+        const file = new File(
+          [blob.slice(0, blob.size, "image/x-icon")],
+          "favicon.ico"
+        );
+
+        $downloadBtn.addEventListener("click", () => {
+          saveAs(file);
+        });
+      };
+      image.src = "./demo-assets/image.png";
+    </script>
+  </body>
+</html>
