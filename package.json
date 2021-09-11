@@ -1,9 +1,10 @@
 {
   "name": "2ico",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "",
   "main": "build/index.umd.js",
   "module": "build/index.es2015.js",
+  "types": "build/index.d.ts",
   "scripts": {
     "format": "prettier --write \"**/*.{ts,html}\"",
     "build": "rimraf build && tsc --emitDeclarationOnly && rollup -c rollup.config.js"
