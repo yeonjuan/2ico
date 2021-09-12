@@ -1,6 +1,6 @@
 # 2ico
 
-Generate ICO from canvas. see [Demo]()
+Generate ICO from canvas. see [Demo](https://yeonjuan.github.io/2ico/)
 
 ## Installation
 

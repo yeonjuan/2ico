@@ -10,6 +10,11 @@ export default {
       name: "toIco",
     },
     {
+      file: 'demo-assets/to-ico.js',
+      format: "umd",
+      name: "toIco",
+    },
+    {
       file: pkgJSON.module,
       format: "es",
     },

@@ -9,7 +9,7 @@
       }
     </style>
     <script src="./demo-assets/file-saver.js"></script>
-    <script src="./build/index.umd.js"></script>
+    <script src="./assets/to-ico.js"></script>
   </head>
   <body>
     <canvas id="canvas" width="128" height="128"> </canvas>
@@ -21,12 +21,9 @@
       const image = new Image();
       image.crossOrigin = "Anonymous";
       image.onload = async () => {
-        const { width, height } = $canvas;
-        ctx.drawImage(image, 0, 0, width, height);
+        ctx.drawImage(image, 0, 0, 128, 128);
         const $downloadBtn = document.getElementById("download");
         const ico = toIco($canvas);
-
-
         const data = await fetch(ico);
         const blob = await data.blob();
         const file = new File(
