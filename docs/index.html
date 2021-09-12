@@ -7,8 +7,6 @@
         height: 128px;
         border: 1px solid black;
       }
-      code {
-      }
     </style>
     <script src="./demo-assets/file-saver.js"></script>
     <script src="./build/index.umd.js"></script>
@@ -16,12 +14,6 @@
   <body>
     <canvas id="canvas" width="128" height="128"> </canvas>
     <button id="download">Download</button>
-    <div>
-      <code>
-        const $canvas = document.getElementById("canvas"); <br />
-        toIco($canvas);
-      </code>
-    </div>
 
     <script>
       const $canvas = document.getElementById("canvas");
@@ -33,7 +25,8 @@
         ctx.drawImage(image, 0, 0, width, height);
         const $downloadBtn = document.getElementById("download");
         const ico = toIco($canvas);
-        console.log(ico);
+
+
         const data = await fetch(ico);
         const blob = await data.blob();
         const file = new File(

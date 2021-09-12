@@ -1,16 +1,17 @@
 {
   "name": "2ico",
-  "version": "1.1.1",
-  "description": "",
+  "version": "1.1.2",
+  "description": "Generate ico from canvas",
   "main": "build/index.umd.js",
   "module": "build/index.es2015.js",
   "types": "build/index.d.ts",
+  "keywords": ["ico", "canvas", "generate"],
   "scripts": {
     "format": "prettier --write \"**/*.{ts,html}\"",
     "build": "rimraf build && tsc --emitDeclarationOnly && rollup -c rollup.config.js"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "YeonJuAn",
+  "license": "MIT",
   "devDependencies": {
     "@rollup/plugin-typescript": "^8.2.5",
     "canvas": "^2.8.0",
